@@ -1,16 +1,17 @@
 ---
-- name: Pull Docker Image from Docker Hub and Run Container on Windows
+- name: Pull Docker Image of Calculator
   hosts: localhost
-  gather_facts: no
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
-    - name: Pull Docker Image from Docker Hub
-      ansible.windows.win_command: docker pull dolo650/calculator:latest
-      delegate_to: host.docker.internal  # Replace with your Windows host's IP address
-
+    - name: Pull Image
+      docker_image:
+        name: dolo650/calculator
+        source: pull
     - name: Start Docker Service
-      ansible.windows.win_command: Start-Service docker
-      delegate_to: host.docker.internal   # Replace with your Windows host's IP address
-
-    - name: Run Docker Container
-      ansible.windows.win_command: docker run -d --name my-container dolo650/calculator
-      delegate_to: host.docker.internal   # Replace with your Windows host's IP address
+      service:
+        name: docker
+        state: started
+    - name: Running container
+      shell: docker run -it -d --name Calculator dolo650/calculator
+      
