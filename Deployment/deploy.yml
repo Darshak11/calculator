@@ -9,8 +9,6 @@
         name: dolo650/calculator:latest
         source: pull
     - name: Start docker service
-      service:
-        name: docker
-        state: started
+      ansible.windows.win_command: Start-Service docker
     - name: Running container
       shell: docker run -it -d --name Calculator dolo650/calculator
