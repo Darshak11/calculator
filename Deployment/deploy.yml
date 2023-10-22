@@ -4,13 +4,13 @@
   gather_facts: no
   tasks:
     - name: Pull Docker Image from Docker Hub
-      ansible.windows.win_command: docker pull your-image-name
-      delegate_to: 172.16.137.160  # Replace with your Windows host's IP address
+      ansible.windows.win_command: docker pull dolo650/calculator:latest
+      delegate_to: host.docker.internal  # Replace with your Windows host's IP address
 
     - name: Start Docker Service
       ansible.windows.win_command: Start-Service docker
-      delegate_to: 172.16.137.160  # Replace with your Windows host's IP address
+      delegate_to: host.docker.internal   # Replace with your Windows host's IP address
 
     - name: Run Docker Container
-      ansible.windows.win_command: docker run -d --name my-container your-image-name
-      delegate_to: 172.16.137.160  # Replace with your Windows host's IP address
+      ansible.windows.win_command: docker run -d --name my-container dolo650/calculator
+      delegate_to: host.docker.internal   # Replace with your Windows host's IP address
