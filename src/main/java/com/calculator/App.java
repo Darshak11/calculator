@@ -17,14 +17,14 @@ public class App
     {
         App calculator = new App();
         Scanner scanner = new Scanner(System.in);
-        do 
+        while(true)
         {
             int choice;
+            System.out.println("Enter the operation that you want to perform");
+            System.out.println("Press 1 to find sum\nPress 2 to find difference\nPress 3 to find product\nPress 4 to find the quotient\nPress 5 to find square root\nPress 6 to Factorial\nPress 7 to Natural Log\nPress 8 to Power\n" +
+            "Press any other key to exit\nEnter your choice: ");
             try
             {
-                System.out.println("Enter the operation that you want to perform");
-                System.out.print("Press 1 to find sum\nPress 2 to find difference\nPress 3 to find product\nPress 4 to find the quotient\nPress 5 to find square root\nPress 6 to Factorial\nPress 7 to Natural Log\nPress 8 to Power\n" +
-                "Press any other key to exit\nEnter your choice: ");
                 choice = scanner.nextInt();
             }
             catch (InputMismatchException error) 
@@ -200,7 +200,7 @@ public class App
                     scanner.close();
                     return;
             }
-        } while (true);
+        }
 
     }
 
