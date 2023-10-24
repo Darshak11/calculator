@@ -8,7 +8,7 @@
       docker_image:
         name: dolo650/calculator
         source: pull
-    - name: Start Docker Service
+    - name: Start docker Service
       service:
         name: docker
         state: started
