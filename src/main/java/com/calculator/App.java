@@ -19,12 +19,12 @@ public class App
         Scanner scanner = new Scanner(System.in);
         do 
         {
-            System.out.println("Enter the operation that you want to perform");
-            System.out.print("Press 1 to find sum\nPress 2 to find difference\nPress 3 to find product\nPress 4 to find the quotient\nPress 5 to find square root\nPress 6 to Factorial\nPress 7 to Natural Log\nPress 8 to Power\n" +
-            "Press any other key to exit\nEnter your choice: ");
             int choice;
-            try 
+            try
             {
+                System.out.println("Enter the operation that you want to perform");
+                System.out.print("Press 1 to find sum\nPress 2 to find difference\nPress 3 to find product\nPress 4 to find the quotient\nPress 5 to find square root\nPress 6 to Factorial\nPress 7 to Natural Log\nPress 8 to Power\n" +
+                "Press any other key to exit\nEnter your choice: ");
                 choice = scanner.nextInt();
             }
             catch (InputMismatchException error) 
