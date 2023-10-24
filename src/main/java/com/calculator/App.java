@@ -16,9 +16,6 @@ public class App
     public static void main(String[] args) 
     {
         App calculator = new App();
-        System.out.println("Enter the operation that you want to perform");
-        System.out.println("Press 1 to find sum\nPress 2 to find difference\nPress 3 to find product\nPress 4 to find the quotient\nPress 5 to find square root\nPress 6 to Factorial\nPress 7 to Natural Log\nPress 8 to Power\n" +
-        "Press any other key to exit\nEnter your choice: ");
         Scanner scanner = new Scanner(System.in);
         while(true)
         {
